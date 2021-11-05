@@ -29,3 +29,6 @@ def wikipedia_content():
 	wiki_content = get_wikipedia_content(search_term)
 
 	return jsonify(wiki_content)
+
+if __name__ == "__main__":
+	app.run()
