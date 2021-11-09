@@ -19,7 +19,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def wikipedia_content():
 
-	# convert request to JSON string and then to dictionary
+	# get JSON data of request
 	req = request.get_json()
 
 	# get search term from request
@@ -28,7 +28,9 @@ def wikipedia_content():
 	# next, get formatted wikipedia content
 	wiki_content = get_wikipedia_content(search_term)
 
+	# return that wikipedia content
 	return jsonify(wiki_content)
+
 
 if __name__ == "__main__":
 	app.run()
